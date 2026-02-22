@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: test
+    datasource:
+        url: jdbc:h2:mem:taskdb
+    h2:
+        console:
+            enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: update
