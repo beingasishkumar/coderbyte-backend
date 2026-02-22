@@ -32,7 +32,7 @@ public class TaskServiceTest {
         sampleTask = new Task();
         sampleTask.setId(1L);
         sampleTask.setTitle("Finish Assessment");
-        sampleTask.setCompleted(false);
+        sampleTask.setIsCompleted(false);
     }
 
     @Test
@@ -62,10 +62,10 @@ public class TaskServiceTest {
         when(taskRepository.findById(1L)).thenReturn(Optional.of(sampleTask));
         when(taskRepository.save(any(Task.class))).thenReturn(sampleTask);
 
-        sampleTask.setCompleted(true);
+        sampleTask.setIsCompleted(true);
         Task updatedTask = taskService.update(sampleTask);
 
-        assertTrue(updatedTask.isCompleted());
+        assertTrue(updatedTask.getIsCompleted());
         verify(taskRepository).save(sampleTask);
     }
 }

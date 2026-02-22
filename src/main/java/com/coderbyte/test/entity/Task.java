@@ -29,7 +29,8 @@ public class Task {
 
     private String description;
 
-    private boolean isCompleted;
+    @Builder.Default
+    private Boolean isCompleted = false;
 
     private LocalDateTime dueDate;
 }
